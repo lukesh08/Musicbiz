@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | MusicBiz</title>
+  <link rel="stylesheet" href="contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="contact-container">
+    <header>
+      <h1 class="title">Get in Touch with <span><i>MusicBiz🎵</i></span></h1>
+      <p class="subtitle">We'd love to hear from you. Whether you're an artist, listener, or partner, let's talk music!</p>
+    </header>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> support@musicbiz.com</p>
+        <p><strong>Phone:</strong> +91 9826543210</p>
+        <p><strong>Address:</strong> SD Bansal College of Engineering,<br>Indore</p>
+
+        <div class="social-icons">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+      </div>
+
+      <!-- ✅ Success Message Block -->
+      <div id="success-msg" class="success-msg">✅ Message sent successfully!</div>
+
+      <!-- ✅ Form with onsubmit handler -->
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <h2>Send a Message</h2>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+  <!-- ✅ Message Send Script -->
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const success = document.getElementById("success-msg");
+      success.style.display = "block";
+
+      // Hide success after 3 seconds
+      setTimeout(() => {
+        success.style.display = "none";
+        document.querySelector(".contact-form").reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

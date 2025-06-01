@@ -1,0 +1,190 @@
+:root {
+  --bg-color: #140b0b;
+  --text-color: #eee;
+  --card-bg: #1f1f1f;
+  --highlight: #00ffd5;
+  --link-color: #00e0c9;
+  --shadow-color: rgba(0, 255, 213, 0.3);
+
+}
+
+body.light-theme {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --card-bg: #fff;
+  --highlight: #007d73;
+  --link-color: #006655;
+  --shadow-color: rgba(0, 125, 115, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  /* background: url(https://images.unsplash.com/photo-1471478331149-c72f17e33c73?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 1rem 2rem 3rem;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  background-color: var(--highlight);
+  color: #000;
+  box-shadow: 0 6px 15px var(--highlight);
+}
+
+.about-section {
+  max-width: 1100px;
+  margin: 6rem auto 3rem;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: var(--highlight);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.about-header p {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  user-select: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.about-card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.7s forwards;
+  /* staggered animation delay will be added in JS */
+}
+
+.about-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 15px 30px var(--highlight);
+}
+
+/* Icons */
+.about-card i {
+  font-size: 2.8rem;
+  color: var(--highlight);
+  margin-bottom: 1.2rem;
+  user-select: none;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover i {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.about-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  user-select: none;
+}
+
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.about-card a {
+  color: var(--link-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-card a:hover {
+  color: var(--highlight);
+  text-decoration: underline;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2.4rem;
+  }
+
+  .about-header p {
+    font-size: 1.1rem;
+  }
+
+  .about-card h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 1rem 3rem;
+  }
+  
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header p {
+    font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-card h2 {
+    font-size: 1.2rem;
+  }
+}
