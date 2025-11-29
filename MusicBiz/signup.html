@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MusicBiz|Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body> 
+
+  <div class="container">
+    <h2 class="fade-in">Join <i>MusicBiz🎵</i></h2>
+
+    <!-- Success Message -->
+    <div id="success-message" class="success-message">🎉 Sign up successful! Welcome to MusicBiz!</div>
+
+    <!-- Sign up form -->
+    <form class="signup-form fade-in" onsubmit="goToHome(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter email" required />
+
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Create username" required />
+
+      <label for="password">Password</label>
+      <div class="password-box">
+          <input type="password" id="password" placeholder="Enter password" required />
+          <span class="eye" data-target="password" onclick="togglePasswordVisibility('password')">👁️</span>
+        </div>
+
+        <label for="confirm-password">Confirm Password</label>
+        <div class="password-box">
+          <input type="password" id="confirm-password" placeholder="Confirm password" required />
+          <span class="eye" data-target="confirm-password" onclick="togglePasswordVisibility('confirm-password')">👁️</span>
+        </div>
+
+      <label>I am a:</label>
+      <div class="roles">
+        <label><input type="radio" name="role" value="Listener" required /> Listener</label>
+        <label><input type="radio" name="role" value="Artist" /> Artist</label>
+        <label><input type="radio" name="role" value="Producer" /> Producer</label>
+        <label><input type="radio" name="role" value="Other" /> Other</label>
+      </div>
+
+      <div class="checkbox">
+        <label><input type="checkbox" required />
+          I agree to the <a href="#" class="link-highlight">Terms & Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <div class="social-buttons fade-in">
+      <button class="google">Sign Up with Google</button>
+      <button class="apple">Sign Up with Apple</button>
+      <button class="facebook">Sign Up with Facebook</button>
+    </div>
+
+    <div class="login-link fade-in">
+      Already have an account? <a href="index.html" class="link-highlight">Log in here</a>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

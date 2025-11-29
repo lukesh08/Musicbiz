@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MusicBiz | Home</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><i>MusicBiz🎵</i></div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search music, artists...">
+      <button onclick="handleSearch()">Search</button>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- Main Section -->
+  <section class="main">
+    <h1>Welcome to <i>MusicBiz🎵</i></h1>
+    <p>Stream the latest hits. Discover new artists. Love your sound.</p>
+    <a href="#" class="btn">Start Listening</a>
+
+    <div class="music-notes">
+      <div class="note" style="left: 10%; animation-delay: 0s;">🎵</div>
+      <div class="note" style="left: 30%; animation-delay: 2s;">🎶</div>
+      <div class="note" style="left: 50%; animation-delay: 2s;">🎼</div>
+      <div class="note" style="left: 70%; animation-delay: 1s;">🎧</div>
+      <div class="note" style="left: 90%; animation-delay: 3s;">🎹</div>
+    </div>
+  </section>
+
+  <!-- Music Player -->
+  <section class="section music-player">
+    <h2>🎶 Now Playing</h2>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/46QbY78ha62aiu6gBgC7lS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <!-- Latest Releases -->
+  <section class="section Releases">
+    <h2>🔥 Latest Releases</h2>
+    <div class="cards">
+      <a href="https://open.spotify.com/album/0wkGNaTXbbxaD9QjvxlNGE" target="_blank"><div class="card">G.O.A.T</div></a>
+      <a href="https://open.spotify.com/artist/4PULA4EFzYTrxYvOVlwpiQ" target="_blank"><div class="card">Sidhu Moose Wala</div></a>
+      <a href="https://open.spotify.com/artist/5r3wPya2PpeTTsXsGhQU8O" target="_blank"><div class="card">Supreme</div></a>
+      <a href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" target="_blank"><div class="card">The Weeknd</div></a>
+      <a href="https://open.spotify.com/artist/69GGBxA162lTqCwzJG5jLp" target="_blank"><div class="card">Chainsmokers</div></a>
+    </div>
+  </section>
+
+  <!-- Popular Genres -->
+  <section class="section Genres">
+    <h2>🎧 Popular Genres</h2>
+    <div class="cards">
+      <a href="https://open.spotify.com/genre/romance" target="_blank"><div class="card">Romantic</div></a>
+      <a href="https://open.spotify.com/genre/electronic" target="_blank"><div class="card">Electronic</div></a>
+      <a href="https://open.spotify.com/genre/hiphop" target="_blank"><div class="card">Hip-Hop</div></a>
+      <a href="https://open.spotify.com/search/reverb/genres" target="_blank"><div class="card">Reverb</div></a>
+      <a href="https://open.spotify.com/genre/0JQ5DAqbMKFHOzuVTgTizF" target="_blank"><div class="card">Pop</div></a>
+    </div>
+  </section>
+
+  <!-- Trending Artists -->
+  <section class="section Artists">
+    <h2>🌟 Trending Artists</h2>
+    <div class="cards">
+      <a href="https://open.spotify.com/artist/4YRxDV8wJFPHPTeXepOstw" target="_blank"><div class="card">Arijit Singh</div></a>
+      <a href="https://open.spotify.com/artist/0oOet2f43PA68X5RxKobEy" target="_blank"><div class="card">Shreya Ghoshal</div></a>
+      <a href="https://open.spotify.com/artist/2oSONSC9zQ4UonDKnLqksx" target="_blank"><div class="card">Atif Aslam</div></a>
+      <a href="https://open.spotify.com/artist/2FKWNmZWDBZR4dE5KX4plR" target="_blank"><div class="card">Diljit Dosanjh</div></a>
+      <a href="https://open.spotify.com/artist/6DARBhWbfcS9E4yJzcliqQ" target="_blank"><div class="card">Karan Aujla</div></a>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Ready to dive into music?</h2>
+    <a href="#" class="btn">Try Premium</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 <i>MusicBiz🎵</i>. All rights reserved.</p>
+  </footer>
+
+  <!-- Logout Script -->
+  <script>
+    function logout() {
+      const confirmed = confirm("Are you sure you want to logout?");
+      if (!confirmed) return;
+
+      const button = document.querySelector('.logout-btn');
+      button.innerHTML = '<span class="spinner"></span>Logging out...';
+      button.disabled = true;
+
+      setTimeout(() => {
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

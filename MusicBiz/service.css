@@ -1,0 +1,116 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #1db954;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fffacd;
+  font-style: italic;
+}
+
+.services-intro {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.services-intro h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  color: #f0e68c;
+  min-height: 50px;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.service-card {
+  background: #282828;
+  border-radius: 16px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px #1db954;
+}
+
+.service-card .icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+/* Sparkle animation keyframes */
+@keyframes sparkle {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+    transform: scale(1) rotate(0deg);
+    text-shadow: none;
+  }
+  50% {
+    filter: brightness(1.5) saturate(1.3);
+    transform: scale(1.1) rotate(5deg);
+    text-shadow:
+      0 0 6px #fff,
+      0 0 12px #f0e68c,
+      0 0 18px #fffacd;
+  }
+}
+
+/* Sparkle effect on icon */
+.service-card .icon.sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #f0e68c;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+footer {
+  background-color: #1db954;
+  padding: 20px;
+  text-align: center;
+  color: #fffacd;
+  font-style: italic;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
